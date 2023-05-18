@@ -1,0 +1,22 @@
+---
+const city = import.meta.env.PUBLIC_CITY
+const phoneNo = import.meta.env.PUBLIC_PHONE_NO
+// Colors
+---
+<footer class="mt-auto bg-light text-dark pt-5 pb-3">
+    <div class="container d-grid">
+        <div class="row">
+            <div class="col-12 row pb-4">
+                <div class="col-12 col-lg-4 justify-content-center justify-content-lg-start align-items-center align-items-lg-start">
+                    <div class="text-center text-lg-start">
+                        <p class="fs-2 fw-bold">Mobile Tyres <span class="text-warning">{city}</span></p>
+                        <p class="lead">Your local mobile tyre fitting experts in <strong>{city}</strong>, UK. We come to you at home, work or roadside - 6 days a week.</p>
+                        <p class="fw-bold fs-5 mb-0"><i class="bi bi-telephone-fill"></i> {phoneNo}</p>
+                        <p class="fw-bold fs-5"><i class="bi bi-envelope-fill"></i> mobile@lindleys.co.uk
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

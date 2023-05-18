@@ -1,0 +1,21 @@
+---
+import ServiceLayout from "../layouts/ServiceLayout.astro"
+
+const city = import.meta.env.PUBLIC_CITY
+const phoneNo = import.meta.env.PUBLIC_PHONE_NO
+
+const title = `Mobile Puncture Repair In ${city}`
+const description = `If you've got a flat tyre caused by a nail, you can have it fixed with our mobile puncture repair service. We cover ${city} and surrounding areas. Call us today.`
+const index = true
+const bgImg = "url('/img/mobile-tyre-fitting-van.jpg')"
+const heading = "Have You Got a Flat Tyre?"
+const tagline = "We can come to you and fix it today"
+const formOption = "registration"
+const mainHeading = `Mobile Puncture Repair In ${city}`
+---
+
+<ServiceLayout title={title} description={description} index={index} bgImg={bgImg} heading={heading} tagline={tagline} formOption={formOption} mainHeading={mainHeading}>
+    <p>If you find yourself stuck at home or work with a <strong>flat tyre</strong>, don't waste your money calling a breakdown wagon to recover your vehicle to a local garage. We have <strong>mobile tyre vans located around {city}</strong> and aim to be with you <em>within 90 minutes.</em></p>
+    <p>Most new vehicles do not come with a spare tyre, and more and more people are finding themselves stranded. Save time and money with our <strong>mobile puncture repair service</strong>.</p>
+    <p>Call us for assistance on {phoneNo}.</p>
+</ServiceLayout>

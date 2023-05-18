@@ -1,0 +1,21 @@
+---
+import ServiceLayout from "../layouts/ServiceLayout.astro"
+
+const city = import.meta.env.PUBLIC_CITY
+
+const title = `Tyre Pressure Monitoring Systems - Mobile Tyres ${city}`
+const description = "Our mobile tyre fitters are fully trained to service and programme new TPMS sensors to any car make and model."
+const index = true
+const bgImg = "url('/img/mobile-tyre-fitting-van.jpg')"
+const heading = "Faulty Tyre Pressure Sensor?"
+const tagline = "We can replace and programme new TPMS sensors for your vehicle"
+const formOption = "registration"
+const mainHeading = `Tyre Pressure Sensors In ${city}`
+---
+
+<ServiceLayout title={title} description={description} index={index} bgImg={bgImg} heading={heading} tagline={tagline} formOption={formOption} mainHeading={mainHeading}>
+    <!-- Content for tpms -->
+    <p>Is your <strong>TPMS light on</strong>? Has your car failed its MOT due to a <strong>faulty tyre sensor</strong>? If so, we can help you. Our mobile tyre vans have a selection of <strong>TPMS sensors</strong> on-board which can be programmed to any car make & model.</p>
+    <p>We also stock <strong>TPMS valve stems & service kits</strong> in the event that your current tyre sensor valve is damaged and needs replacing.</p>
+    <p>If you'd like a price for our <strong>mobile TPMS service</strong> and you live in <strong>{city}</strong> then give us a call today!</p>
+</ServiceLayout>

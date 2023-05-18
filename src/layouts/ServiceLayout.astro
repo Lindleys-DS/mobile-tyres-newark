@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Hero from "../components/Hero.astro"
+import Benefits from "../components/Benefits.astro"
+import Testimonials from "../components/Testimonials.astro"
+import CTA from "../components/CTA.astro"
+
+export interface Props {
+    title: string,
+    description: string,
+    index: boolean,
+    bgImg: string,
+    heading: string,
+    tagline: string,
+    formOption: string,
+    mainHeading: string,
+}
+
+const { title, description, index, bgImg, heading, tagline, formOption, mainHeading } = Astro.props;
+
+const city = import.meta.env.PUBLIC_CITY
+const areas = import.meta.env.PUBLIC_AREAS.split(", ")
+
+// Mapping function to generate lowercase links with dashes
+const generateLink = (area) => {
+  const lowercaseArea = area.toLowerCase();
+  const dashedArea = lowercaseArea.replace(/\s+/g, "-"); // Replace spaces with dashes
+  return `/coverage/${dashedArea}`;
+};
+
+---
+
+<Layout title={title} description={description} index={index}>
+    <Hero heading={heading} tagline={tagline} bgImg={bgImg} formOption={formOption} />
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <main>
+                    <h1 class="text-center text-lg-start mb-3">{mainHeading}</h1>
+                    <slot />
+                </main>
+                <article>
+                    <h2>Why Choose Mobile Tyres {city}?</h2>
+                    <ul>
+                        <li>Convenient and efficient service that comes to you.</li>
+                        <li>Experienced technicians who use state-of-the-art equipment.</li>
+                        <li>Wide range of tyres from leading manufacturers at competitive prices.</li>
+                        <li>Exceptional customer service and integrity as a family-run business.</li>
+                        <li>Open 6 days a week with <a href="/emergency-tyre-replacement">same day fitting</a> available.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h2>Areas We Cover</h2>
+                    <p>Our mobile services are available across many areas of {city}, including: { areas.map((area) => <a href={generateLink(area)}>{area}, </a>)} and surrounding areas.</p>
+                </article>
+                <article>
+                    <h2>Get A Quote Today</h2>
+                    <p>At Mobile Tyres {city}, we are committed to providing customers with a range of high-quality services that are both efficient and affordable. <a href="/contact-us">Contact us</a> today to learn more about our services or to schedule an appointment.</p>
+                </article>
+            </div>
+            <div class="col-12 col-lg-4">
+                <Benefits />
+            </div>
+        </div>
+    </div>
+    <Testimonials />
+    <CTA />
+</Layout>

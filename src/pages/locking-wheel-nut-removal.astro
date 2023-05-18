@@ -1,0 +1,22 @@
+---
+import ServiceLayout from "../layouts/ServiceLayout.astro"
+
+const city = import.meta.env.PUBLIC_CITY
+const phoneNo = import.meta.env.PUBLIC_PHONE_NO
+
+const title = `Locking Wheel Nut Removal In ${city}`
+const description = "If you've lost or broken your locking wheel nut key, we can come to you today. Our technicians can remove lockers on a wide range of car makes and models."
+const index = true
+const bgImg = "url('/img/mobile-tyre-fitting-van.jpg')"
+const heading = "Lost Your Locking Wheel Nut?"
+const tagline = "We can come to you and remove your lockers today"
+const formOption = "registration"
+const mainHeading = `Locking Wheel Nut Removal In ${city}`
+---
+
+<ServiceLayout title={title} description={description} index={index} bgImg={bgImg} heading={heading} tagline={tagline} formOption={formOption} mainHeading={mainHeading}>
+    <!-- Content for locking wheel nut removal -->
+    <p>If you've <strong>lost your locking wheel nut</strong>, or it's been damaged or overtightened, we can help! We offer a professional <strong>mobile locking wheel nut removal service</strong> across <strong>{city}</strong> and surrounding areas.</p>
+    <p>Our technicians can remove lockers on a wide range of car makes & models, including: Audi, BMW, Citroen, Peugeot, Volvo, Seat and many more.</p>
+    <p>If you need some locking wheel nuts removed and want someone to come to you, give us a call today on <a href={`tel:${phoneNo}`}>{phoneNo}</a></p>
+</ServiceLayout>

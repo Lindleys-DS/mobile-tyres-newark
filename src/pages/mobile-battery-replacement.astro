@@ -1,0 +1,22 @@
+---
+import ServiceLayout from "../layouts/ServiceLayout.astro"
+
+const city = import.meta.env.PUBLIC_CITY
+
+const title = `Mobile Car Battery Replacement In ${city}`
+const description = `If you've got a flat car battery, we can come to you and replace it today. Our mobile fitters cover a wide range of ${city}. Get in touch with for a quote.`
+const index = true
+const bgImg = "url('/img/mobile-tyre-fitting-van.jpg')"
+const heading = "Car Batteries Fitted at Home"
+const tagline = "If you need a new battery, we can come to you and replace it today."
+const formOption = "registration"
+const mainHeading = `Mobile Car Battery Replacement In ${city}`
+---
+
+<ServiceLayout title={title} description={description} index={index} bgImg={bgImg} heading={heading} tagline={tagline} formOption={formOption} mainHeading={mainHeading}>
+    <!-- Content for mobile battery replacement -->
+    <p>If you've got a <strong>flat car battery</strong> and need a mobile service to come to you at home or work, then you've come to the right place. <strong>Mobile Tyres {city}</strong> offers a convenient <strong>mobile car battery replacement</strong> service across many areas of {city}.</p>
+    <p>It doesn't matter where you are, our mobile vans have all the equipment required to replace your battery at a time and place that suits you.</p>
+    <p>We can change batteries on a wide range of makes and models, including: Audi, BMW, Citroen, Mazda, Volvo and many more.</p>
+    <p>If you need assistance with a flat battery, then give us a call today for a quote.</p>
+</ServiceLayout>

@@ -1,15 +1,33 @@
 ---
+import Layout from "../layouts/Layout.astro"
+import Hero from "../components/Hero.astro"
+import Services from "../components/Services.astro"
+import Testimonials from "../components/Testimonials.astro"
+import CTA from "../components/CTA.astro"
+const heading = "Expert Tyre Service at Your Doorstep"
+const tagline = "We come to you at home, work or roadside"
+const bgImg = "url(/img/mobile-tyre-fitting-van.jpg)"
+const city = import.meta.env.PUBLIC_CITY
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout description=`Do you need new car tyres fitted at home in ${city}? ${city} Mobile Tyres provide a convenient mobile tyre replacement service at your doorstep. Contact us today for a quote.` title={`Home - Mobile Tyres ${city}`} index={true}>
+    <Hero heading={heading} tagline={tagline} formOption="registration" bgImg={bgImg}/>
+    <main class="container py-5">
+        <h1 class="text-center mb-5">Convenient Mobile Tyre Fitting Services In {city}</h1>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <p>At Mobile Tyres {city}, we understand that your time is valuable, which is why we offer a <strong>mobile tyre fitting service</strong> that comes to you.</p>
+                <p>Our experienced technicians will fit your new tyres at a location and time that suits you, whether it be at your home, office, or on the roadside.</p>
+                <p>We use state-of-the-art equipment to ensure that your new tyres are fitted safely and securely, with minimal disruption to your day.</p>
+            </div>
+            <div class="col-12 col-md-6">
+                <p>Our mobile tyre fitting service is available throughout <strong>{city}</strong>, and we pride ourselves on our efficient and professional approach.</p>
+                <p>We also stock a wide range of tyres from leading manufacturers, ensuring that we have the right tyres for your vehicle at competitive prices.</p>
+                <p>Contact us today to schedule your mobile tyre fitting appointment, and experience the convenience and quality that Mobile Tyres {city} has to offer.</p>
+            </div>
+        </div>
+    </main>
+    <Services />
+    <Testimonials />
+    <CTA />
+</Layout>

@@ -1,0 +1,55 @@
+<form method="post" class="bg-white p-4 border shadow-lg rounded-3" action="https://lindleys-api.herokuapp.com/mobile-tyres-newark/tyresize">
+    <p class="text-center mb-3 fs-4 fw-bold">Get A Quote</p>
+    <!-- Size Section -->
+    <div>
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-lg text-center" placeholder="Enter Tyre Size" id="sizeInput" name="tyresize">
+        </div>
+        <div>
+            <div class="d-grid">
+                <a href="#" class="btn btn-warning btn-lg next-btn">Next</a>
+            </div>
+        </div>
+    </div>
+    <!-- Postcode Section -->
+    <div class="d-none">
+        <input type="text" class="mb-2 form-control form-control-lg text-center" id="postcodeInput" name="postcode" placeholder="Enter Postcode">
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <a href="#" class="btn-dark btn btn-lg back-btn">Back</a>
+            </div>
+            <div class="col-6 d-grid">
+                <a href="#" class="btn btn-warning btn-lg next-btn">Next</a>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Section -->
+    <div class="d-none">
+        <div class="mb-2">
+            <input type="text" name="name" id="nameInput" class="form-control form-control-lg" required placeholder="Name">
+        </div>
+        <div class="mb-2">
+            <input type="tel" name="phone" id="phoneInput" class="form-control form-control-lg" placeholder="Phone" required>
+        </div>
+        <div class="mb-2">
+            <input type="email" name="email" id="emailInput" class="form-control form-control-lg" placeholder="Email" required>
+        </div>
+        <div class="mb-2">
+            <textarea name="message" id="message" cols="30" rows="3" class="form-control form-control-lg" placeholder="Message" required></textarea>
+        </div>
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <a href="#" class="btn-dark btn btn-lg back-btn">Back</a>
+            </div>
+            <div class="col-6 d-grid">
+                <button type="submit" class="btn btn-info btn-lg" id="submitBtn">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<style>
+    #sizeInput, #postcodeInput {
+        text-transform: uppercase;
+    }
+</style>

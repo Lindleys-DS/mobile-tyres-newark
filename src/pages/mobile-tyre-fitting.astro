@@ -1,0 +1,27 @@
+---
+import ServiceLayout from "../layouts/ServiceLayout.astro"
+
+const city = import.meta.env.PUBLIC_CITY
+const areas = import.meta.env.PUBLIC_AREAS.split(", ")
+
+const title = `Mobile Tyre Fitting In ${city}`
+const description = `Change your tyres at home with our mobile tyre fitting service. We cover ${city} and surrounding areas. Call us today for a quote.`
+const index = true
+const bgImg = "url('/img/mobile-tyre-fitting-van.jpg')"
+const heading = "The Easy Way to Change Your Tyres"
+const tagline = "Have your tyres fitted at home or work"
+const formOption = "registration"
+const mainHeading = `Mobile Tyre Fitting In ${city}`
+---
+
+
+<ServiceLayout title={title} description={description} index={index} bgImg={bgImg} heading={heading} tagline={tagline} formOption={formOption} mainHeading={mainHeading}>
+    <p><strong>Mobile tyre fitting</strong> is a relatively new but rapidly expanding industry due to the convenience of the service that is offered.</p>
+    <p>You simply call us with the <strong>tyre size</strong> of your vehicle and we can be at your location within <em>90 minutes</em> to replace your tyres. This can either be done as an <a href="/emergency-tyre-replacement">emergency in a breakdown situation</a> or as a replacement service to using your local garage.</p>
+    <p>Modern technology has allowed for this service to come at no extra cost.</p>
+    <p>All of our vans have been equipped with the best equipment money can buy and is suitable to use with all tyres, including run flats and low profile tyres.</p>
+    <p>We can also replace tyres that have Tyron bands fitted such as <a href="/mobile-caravan-tyre-fitting">caravan tyres.</a></p>
+    <h2>Mobile Tyre Fitting Covering the Whole of {city}</h2>
+    <p>With multiple vans in <strong>{city}</strong>, we aim to respond to any <strong>tyre call-outs</strong> within 90 minutes.</p>
+    <p>We cover {areas.map((area) => <span>{area}, </span>)}and surrounding areas.</p>
+</ServiceLayout>

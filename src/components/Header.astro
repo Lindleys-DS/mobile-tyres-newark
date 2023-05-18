@@ -1,0 +1,67 @@
+---
+const city = import.meta.env.PUBLIC_CITY
+const phoneNo = import.meta.env.PUBLIC_PHONE_NO
+let areas = import.meta.env.PUBLIC_AREAS.split(", ")
+
+// Mapping function to generate lowercase links with dashes
+const generateLink = (area) => {
+  const lowercaseArea = area.toLowerCase();
+  const dashedArea = lowercaseArea.replace(/\s+/g, "-"); // Replace spaces with dashes
+  return `/coverage/${dashedArea}`;
+};
+
+// Colors x 3
+
+---
+<header class="bg-light">
+    <div class="container d-flex justify-content-between align-items-center py-5">
+        <a href="/" class="navbar-brand fw-bold fs-2">Mobile Tyres <span class="text-warning">{city}</span></a>
+        <div>
+            <div class="d-none d-lg-block fs-3 text-end">
+                <p class="mb-0">Call Us Today For A Price</p>
+                <p class="mb-0 fw-bold text-warning"><i class="bi bi-telephone-fill"></i> {phoneNo}</p>
+            </div>
+            <a href=`tel:${phoneNo}` class="btn btn-dark btn-lg d-lg-none"><i class="bi bi-telephone-fill"></i></a>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning fw-bold">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link"><i class="bi bi-house-door-fill"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Mobile Tyre Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/mobile-tyre-fitting" class="dropdown-item">Mobile Tyre Fitting</a></li>
+                            <li><a href="/mobile-puncture-repair" class="dropdown-item">Mobile Puncture Repair</a></li>
+                            <li><a href="/emergency-tyre-replacement" class="dropdown-item">Emergency Tyre Replacement</a></li>
+                            <li><a href="/mobile-caravan-tyre-fitting" class="dropdown-item">Mobile Caravan Tyre Fitting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Other Services</a>
+                        <ul class="dropdown-menu">
+                            <a href="/mobile-battery-replacement" class="dropdown-item">Mobile Battery Replacement</a>
+                            <a href="/locking-wheel-nut-removal" class="dropdown-item">Locking Wheel Nut Removal</a>
+                            <a href="/tyre-pressure-monitoring-systems" class="dropdown-item">Tyre Pressure Monitoring Systems</a>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Coverage</a>
+                        <ul class="dropdown-menu">
+                            { areas.map((area) => <a href={generateLink(area)} class="dropdown-item">{area}</a>)}
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact-us" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

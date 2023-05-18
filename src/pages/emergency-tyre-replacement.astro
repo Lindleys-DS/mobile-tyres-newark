@@ -1,0 +1,25 @@
+---
+import ServiceLayout from "../layouts/ServiceLayout.astro"
+
+const phoneNo = import.meta.env.PUBLIC_PHONE_NO
+const city = import.meta.env.PUBLIC_CITY
+
+const title = `Emergency Tyre Replacement In ${city}`
+const description = `If you're stuck with a flat tyre after a blowout, we can help. We provide a fast response, emergency mobile tyre fitting service across ${city}. Call now for assistance.`
+const index = true
+const bgImg = "url('/img/mobile-tyre-fitting-van.jpg')"
+const heading = "Need a Tyre Urgently?"
+const tagline = "If you've had a tyre blowout, we can get you back on the road in no time!"
+const formOption = "registration"
+const mainHeading = `Emergency Tyre Replacement In ${city}`
+
+---
+
+<ServiceLayout title={title} description={description} index={index} bgImg={bgImg} heading={heading} tagline={tagline} formOption={formOption} mainHeading={mainHeading}>
+    <div>
+        <p><strong>Mobile Tyres {city}</strong> offer roadside and emergency assistance around {city}.</strong></p>
+        <p>If you find yourself stuck with a flat tyre and you are in a hurry, make sure you give us a call. We have multiple <strong>mobile tyre fitting vans</strong> working from several outlets in the {city} area and aim to be with you <em>within 90 minutes.</em></p>
+        <p>Several of our clients have large fleets that demand a 60-90 minute response time.</p>
+        <p>Call us now for assistance on <a href={`${phoneNo}`}>{phoneNo}</a>.</p>
+    </div>
+</ServiceLayout>

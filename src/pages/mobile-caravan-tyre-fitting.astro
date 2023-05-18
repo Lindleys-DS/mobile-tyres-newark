@@ -1,0 +1,21 @@
+---
+import ServiceLayout from "../layouts/ServiceLayout.astro"
+
+const city = import.meta.env.PUBLIC_CITY
+
+const title = `Mobile Caravan Tyre Fitting In ${city}`
+const description = `Why tow your caravan to a tyre shop when you can have your old caravan tyres changed at home! Our tyre fitters cover most areas of ${city}. Call us today for a quote.`
+const index = true
+const bgImg = "url('/img/mobile-tyre-fitting-van.jpg')"
+const heading = "Caravan Tyres Fitted at Home"
+const tagline = "Avoid the hassle of driving to a garage. Change your caravan tyres at home instead."
+const formOption = "tyresize"
+const mainHeading = `Mobile Caravan Tyre Fitting In ${city}`
+---
+
+<ServiceLayout title={title} description={description} index={index} bgImg={bgImg} heading={heading} tagline={tagline} formOption={formOption} mainHeading={mainHeading}>
+    <!-- Content for mobile caravan tyre fitting -->
+    <p>Changing the <strong>tyres</strong> on your <strong>caravan</strong> can be a right hassle, especially when you have to tow it to a garage. Why not <strong>change your caravan tyres</strong> the easy way by having them <strong>fitted at home?</strong></p>
+    <p>Our <strong>mobile tyre fitters</strong> can come to you at home or on site and replace your old tyres today. It doesn't matter if you've got Tyron bands or motor movers; our fitters are specialists when it comes to replacing caravan tyres.</p>
+    <p>If you live in <strong>{city}</strong> and would like new tyres to be fitted to your caravan or motorhome then give us a call today for a quote.</p>
+</ServiceLayout>
