@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro"
 const phoneNo = import.meta.env.PUBLIC_PHONE_NO
+const city = import.meta.env.PUBLIC_CITY
 ---
 
-<Layout title="" description="" index={true}>
+<Layout title={`Contact Us | Mobile Tyres ${city}`} description="" index={true}>
     <main>
         <div class="py-5 bg-secondary">
             <div class="container">
