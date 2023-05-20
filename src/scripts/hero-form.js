@@ -1,3 +1,6 @@
+    const urlInput = document.getElementById("urlInput");
+    urlInput.value = window.location.href;
+    
     // Find all next-btn elements
     const nextBtns = document.querySelectorAll(".next-btn");
 
